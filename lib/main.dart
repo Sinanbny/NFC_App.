@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nfc_app3/NFC_mechanic.dart';
 
 import 'package:nfc_app3/main_page.dart';
 import 'package:nfc_app3/tabbar_page.dart';
@@ -65,7 +66,7 @@ class Homepage extends StatelessWidget {
                   title:const  Text('Read Tag'),
                   leading: const Icon(Icons.search_rounded),iconColor: Colors.blue,
                   onTap: () {
-                    
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> const NfcMechanic()));
                   },
                 ),
                ListTile(
