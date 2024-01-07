@@ -1,6 +1,5 @@
 
-// ignore: unused_import
-import 'dart:ffi';
+
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
@@ -16,17 +15,14 @@ class NfcMechanic extends StatefulWidget {
 
 class _NfcMechanicState extends State<NfcMechanic> {
   ValueNotifier<dynamic> result = ValueNotifier(null);
-
   
-  
-  
- 
+  get ndef => null;
 
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text('NFC app reader card flutter'),),
+        appBar: AppBar(title: const Text('NFC '),),
         body:  SafeArea(
           child:  FutureBuilder<bool>(future:NfcManager.instance.isAvailable(),builder:(context, ss) => ss.data !=true?
         Center(
@@ -106,14 +102,13 @@ void  _tagRead() {
 
 Future<void> _ndefWrite() async {
 NfcManager.instance.startSession(onDiscovered: (NfcTag tag) async{
-  print('Start Write');
   var ndef = Ndef.from(tag);
-  if (ndef == null || !ndef.isWritable);
-  
-  NfcManager.instance.stopSession(errorMessage: result.value);
+  if (ndef == null || !ndef.isWritable) {
+    NfcManager.instance.stopSession(errorMessage: result.value);
+  }
   return;
   });
-   // ignore: unused_local_variable
+  
    NdefMessage message = NdefMessage([
     NdefRecord.createText('Hello World!'),
     NdefRecord.createUri(Uri.parse('https://flutter.dev')),
@@ -123,7 +118,7 @@ NfcManager.instance.startSession(onDiscovered: (NfcTag tag) async{
    ]);
    try{
     print('proses write');
-    var ndef;
+     ndef;
     await ndef.write(message);
     
     result.value ='Succes to Ndef Write';
