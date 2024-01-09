@@ -21,7 +21,9 @@ class _NfcMechanicState extends State<NfcMechanic> {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
+        
         appBar: AppBar(title: const Text('NFC '),),
         body:  SafeArea(
           child:  FutureBuilder<bool>(future:NfcManager.instance.isAvailable(),builder:(context, ss) => ss.data !=true?
