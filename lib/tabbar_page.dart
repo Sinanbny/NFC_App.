@@ -37,7 +37,7 @@ class _TabBarPageState extends State<TabBarPage>
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal:20),
           child: SizedBox(
             height: MediaQuery.of(context).size.height,
             child: Column(
@@ -47,19 +47,19 @@ class _TabBarPageState extends State<TabBarPage>
                   
                   width: MediaQuery.of(context).size.height,
                   decoration: BoxDecoration(
-                      color: Colors.grey[400],
+                      color: Colors.grey[600],
                       borderRadius: BorderRadius.circular(20)),
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(5),
                         child: TabBar(
                           unselectedLabelColor: Colors.white,
                           labelColor: Colors.black,
                           indicatorColor: Colors.white,
                           indicatorWeight: 3,
                           indicator: BoxDecoration(
-                            color: Colors.white,
+                            color: Colors.grey[400],
                             borderRadius: BorderRadius.circular(15),
                           ),
                           controller: tabController,
