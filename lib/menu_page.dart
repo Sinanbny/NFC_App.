@@ -21,6 +21,7 @@ class MenuPage extends StatelessWidget {
       children: [const Padding(padding: EdgeInsets.all(12)),
 
       ExpansionTile(
+        initiallyExpanded: true,
         title: const Text('Create your first tag'),
         subtitle: Title(color: Colors.grey, child: const Text('(Add NFC tag)',style: TextStyle(fontSize: 12),)),
         children:  [

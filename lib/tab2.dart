@@ -21,7 +21,7 @@ class Tab2 extends StatelessWidget {
               ),
             ),ElevatedButton(
               onPressed: (){}, 
-              child: const Text('Write to tag'),
+              child:  const Text('Write to tag'),
               ),
 
             const SizedBox(

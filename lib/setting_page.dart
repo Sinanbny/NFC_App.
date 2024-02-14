@@ -20,6 +20,7 @@ class SettingsPage extends StatelessWidget {
         children: [
           const Padding(padding: (EdgeInsets.all(12))),
           ExpansionTile(
+            initiallyExpanded: true,
             title: const Text('PLUS',style: TextStyle(fontSize: 20),),
             children: [
               ListTile(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nfc_app3/NFC_mechanic.dart';
-
+import 'package:nfc_app3/nfc_mechanic.dart';
 import 'package:nfc_app3/main_page.dart';
 import 'package:nfc_app3/tabbar_page.dart';
 
@@ -53,6 +52,7 @@ class Homepage extends StatelessWidget {
         body:Column(
           children: [ const Padding(padding: EdgeInsets.all(20)),
             ExpansionTile(
+              initiallyExpanded: true,
               title:  const Text('QUICK ACTIONS',style: TextStyle(fontSize: 20),),
               children: [
                 ListTile(
@@ -78,6 +78,7 @@ class Homepage extends StatelessWidget {
               ],
               
             ),ExpansionTile(title: const Text('ADVANCED'),
+            initiallyExpanded: true,
             children: [
               ListTile(
                 leading: const Icon(Icons.add_circle_outline),iconColor: Colors.green,

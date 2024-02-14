@@ -1,7 +1,5 @@
 
-
 import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:nfc_manager/nfc_manager.dart';
 
@@ -97,7 +95,6 @@ class _NfcMechanicState extends State<NfcMechanic> {
 void  _tagRead() {
  NfcManager.instance.startSession (onDiscovered: (NfcTag tag) async {
  result.value=tag.data;
- print('data:' + result.value.toString());
  NfcManager.instance.stopSession();
  });
 }
@@ -119,14 +116,12 @@ NfcManager.instance.startSession(onDiscovered: (NfcTag tag) async{
             'com.example', 'mytype', Uint8List.fromList('mydata'.codeUnits)),
    ]);
    try{
-    print('proses write');
      ndef;
     await ndef.write(message);
     
     result.value ='Succes to Ndef Write';
     NfcManager.instance.stopSession();
    } catch (e){
-  print('failed write');
   result.value = e;
   NfcManager.instance.stopSession(errorMessage: result.value.toString());
   return;
